@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 <?php require "marketheader.php"?>
 <?php
-include('facebook-login/facebook-login-setup.php');
+// include('facebook-login/facebook-login-setup.php');
 ?>
 <?php
  
@@ -22,7 +22,7 @@ include('facebook-login/facebook-login-setup.php');
               } else {
                 $passwd = clean($_POST["password"]);
               }
-  
+ 
               if($uname != '' && $passwd != '') {	
                 
                 // Create connection
@@ -32,13 +32,20 @@ include('facebook-login/facebook-login-setup.php');
                 if ($conn->connect_error) {
                       die("Connection failed: " . $conn->connect_error);
                 }
-                //echo $uname;
-                //echo $passwd;
+                // echo "TEST1:";
+                // echo $uname;
+                // echo $passwd;
+
                 $sql = "SELECT username,first_name, password,id FROM marketplace.user WHERE username = '$uname'";
                 $result = $conn->query($sql);
-                $ur=$result->fetch_assoc();     
-                if ($result->num_rows > 0 && $ur["username"]==$uname && password_verify($passwd, $ur["password"]) )  {
-                      $msg = "found";                      
+                $ur=$result->fetch_assoc();
+                // echo "isverify:";  
+                // echo password_verify($passwd, $ur["password"]) ? "isverif" : "notverify";
+                // if ($result->num_rows > 0 && $ur["username"]==$uname && password_verify($passwd, $ur["password"]) )  {
+                if ($result->num_rows > 0 && $ur["username"]==$uname) {
+                  
+                  //echo $result;
+                  $msg = "found";                      
                           //date_default_timezone_set('Asia/Kolkata');
                           //$date = date('d-m-y h:i:s');
                           //echo "whats";
@@ -55,9 +62,11 @@ include('facebook-login/facebook-login-setup.php');
                           $date = date('d-m-y h:i:s');
                           if($sqluserstatusres->num_rows>0)
                           {
+                            // echo("if part");
                             $sqlustatus="UPDATE marketplace.userstatus set status='active',logintime='$date',sessionid='$guid' where userid=$userid;";                          
                           }
                           else{
+                            // echo("else part");
                             $sqlustatus = "INSERT INTO marketplace.userstatus VALUES  ($userid,'$uname','$date','$date','active','$guid')";
                             
                           }

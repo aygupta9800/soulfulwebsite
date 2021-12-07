@@ -2,7 +2,7 @@
 <?php require "marketheader.php"?>
 <?php require "assets/services/marketdbconnector.php"?>
 <?php
-include('facebook-login/facebook-login-setup.php');
+// include('facebook-login/facebook-login-setup.php');
 ?>
  <?php
     
@@ -77,7 +77,7 @@ include('facebook-login/facebook-login-setup.php');
             }
       
             if ($uname != '' && $passwd != '') {
-                $passwd = password_hash($passwd, PASSWORD_DEFAULT);               
+                // $passwd = password_hash($passwd, PASSWORD_DEFAULT);              
                 $conn = new mysqli($servername, $username, $password, $dbname);
                 $msg= "Connected successfully"; 
                 if ($conn->connect_error) {
