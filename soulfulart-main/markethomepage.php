@@ -56,9 +56,12 @@ if ($sqluserres->num_rows >0)
                                     <img width="540" height="302" src="assets/img/pandemicgallery.jpg">
                                     <div class="tn-title">
                                     <?php
+                                    // echo '
+                                    // <a  target="_blank"  href="http://www.soulfulart.ml/products.php?id='.urlencode($ciphertext).'" tabindex="-1">One stop portal for all types of creative paintings</a>';
                                     echo '
-                                    <a  target="_blank"  href="http://www.soulfulart.ml/products.php?id='.urlencode($ciphertext).'" tabindex="-1">One stop portal for all types of creative paintings</a>';?>
-                                       
+                                    <a  target="_blank"  href="http://localhost:8000/products.php?id='.urlencode($ciphertext).'" tabindex="-1">One stop portal for all types of creative paintings</a>';?>
+
+                                    ?>
                                     </div>
                                 </div>
                             </div>
@@ -67,9 +70,10 @@ if ($sqluserres->num_rows >0)
                                 <div class="tn-img">
                                     <img width="540" height="302" src="assets/img/pandemicgallery.jpg">
                                     <div class="tn-title">
+                                    <!-- <a  target="_blank"  href="http://www.soulfulart.ml/products.php?id='.urlencode($ciphertext).'" tabindex="-1">One stop portal for all types of creative paintings</a>';?> -->
                                     <?php
                                     echo '
-                                    <a  target="_blank"  href="http://www.soulfulart.ml/products.php?id='.urlencode($ciphertext).'" tabindex="-1">One stop portal for all types of creative paintings</a>';?>
+                                    <a  target="_blank"  href="http://localhost:8000/products.php?id='.urlencode($ciphertext).'" tabindex="-1">One stop portal for all types of creative paintings</a>';?>
                                     </div>
                                 </div>
                             </div></div></div>
