@@ -115,11 +115,11 @@ if ($sqluserres->num_rows >0)
                         <div class="row tn-slider slick-initialized slick-slider">
                             <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 2850px; transform: translate3d(-570px, 0px, 0px);"><div class="col-md-6 slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 570px;">
                                 <div class="tn-img">
-                                    <img width="540" height="302" src="assets/img/constructionbanner.jpg">
+                                    <img width="540" height="302" src="assets/img/modernhomes.jpg">
                                     <div class="tn-title">
                                     <?php
                                     echo '
-                                    <a  target="_blank"  href="http://angmaterials.com/Products.php?id='.urlencode($ciphertext).'" tabindex="-1">Empower your construction projects</a>';?>
+                                    <a  target="_blank"  href="https://ec2-18-224-33-245.us-east-2.compute.amazonaws.com/" tabindex="-1">Make your home smarter</a>';?>
                                        
                                     </div>
                                 </div>
@@ -127,11 +127,11 @@ if ($sqluserres->num_rows >0)
                          
                             <div class="col-md-6 slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 570px;">
                                 <div class="tn-img">
-                                    <img width="540" height="302" src="assets/img/constructionbanner.jpg">
+                                    <img width="540" height="302" src="assets/img/modernhomes.jpg">
                                     <div class="tn-title">
                                     <?php
                                     echo '
-                                    <a  target="_blank"  href="http://angmaterials.com/Products.php?id='.urlencode($ciphertext).'" tabindex="-1">Empower your construction projects</a>';?>
+                                    <a  target="_blank"  href="https://ec2-18-224-33-245.us-east-2.compute.amazonaws.com/" tabindex="-1">Make your home smarter</a>';?>
                                     </div>
                                 </div>
                             </div></div></div>
@@ -187,7 +187,7 @@ if ($sqluserres->num_rows >0)
                 <ul class="list list-inline">        
 <?php
 
-$sqlpreviousvisits="select * from producthits where userid=".$uid." ORDER BY ts DESC;";
+$sqlpreviousvisits="select * from producthits where userid=".$uid." ORDER BY hits DESC;";
 $sqlprevvisres=$conn->query($sqlpreviousvisits);
 if($sqlprevvisres->num_rows>0)
 {
@@ -198,7 +198,7 @@ if($sqlprevvisres->num_rows>0)
     $prevproductname=$prevres["productname"];
     $prevproducttype=$prevres["type"];
     $pvislink=$prevres["prodlink"];
-    $pvislinktimestamp=$prevres["ts"];
+    $pvislinktimestamp=$prevres["hits"];
    
         echo '
                     <li class="d-flex justify-content-between">
